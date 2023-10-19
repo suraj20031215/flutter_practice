@@ -64,6 +64,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     child: const TextField(
                       keyboardType: TextInputType.emailAddress,
                       decoration: InputDecoration(
+                          hintText: "Enter your email here...",
                           contentPadding: EdgeInsets.symmetric(vertical: 2),
                           border:OutlineInputBorder(borderSide: BorderSide(width: 5,color: Colors.black)
                       ),
@@ -79,13 +80,13 @@ class _MyHomePageState extends State<MyHomePage> {
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Container(
-
                       width: 300,
                       child: const TextField(
                         obscureText: true,
-                               obscuringCharacter: "@",
+                               obscuringCharacter: "*",
                                keyboardType: TextInputType.visiblePassword,
                         decoration: InputDecoration(
+                          hintText: "Enter your password here...",
                             contentPadding: EdgeInsets.symmetric(vertical: 2),
                             border:OutlineInputBorder(borderSide: BorderSide(width: 5,color: Colors.deepOrange)
                         ),
@@ -104,15 +105,22 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
                       onPressed:(){} , child:Text('Sign In',style:TextStyle(color: Colors.white),)),
                 ),
-          Container(width: double.infinity,
-                  child:Center(
+          Container(
+              margin: EdgeInsets.only(left: 90,top: 10),
+              width: double.infinity,
+                  child:const Center(
                     child: Row(
                       children: [
                         Text("Don't have an account?"),
-                        Text("Sign Up"),
+                        Padding(
+                          padding: EdgeInsets.only(left: 6),
+                          child: Text("Sign Up",style: TextStyle(color: Colors.indigo,fontWeight: FontWeight.bold),),
+                        ),
                       ],
                     ),
-                  )),
+                  ),
+          ),
+                Text("Forget Password")
                 
               ],
             ),
